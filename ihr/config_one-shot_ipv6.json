@@ -1,6 +1,6 @@
 {
   "kafka": {
-    "bootstrap_servers": "localhost:38117",
+    "bootstrap_servers": "localhost:8082",
     "no_new_message_limit": 900,
     "leader_wait_minutes": 30,
     "default_topic_config": {
