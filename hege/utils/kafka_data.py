@@ -136,8 +136,8 @@ def prepare_producer():
     logging.debug("prepare producer")
     producer = Producer({
         'bootstrap.servers': KAFKA_BOOTSTRAP_SERVERS,
-        'queue.buffering.max.messages': 10000000,
-        'queue.buffering.max.kbytes': 2097151,
+        'queue.buffering.max.messages': 100000000,
+        'queue.buffering.max.kbytes': 20971510,
         'linger.ms': 200,
         'batch.num.messages': 1000000,
         'default.topic.config': {

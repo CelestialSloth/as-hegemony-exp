@@ -47,7 +47,6 @@ python3 produce_bcscore.py -p -s 2020-08-01T00:00:00 -e 2020-08-01T00:15:00 -c r
 ### `produce_hege`
 - running script for producing **AS** hegemony score
 ```commandline
-python3 produce_hege.py -s 2020-08-01T00:00:00 -e 2020-08-01T00:15:00 -c rrc00,rrc10,route-views.linx,route-views2
  ```
 - running script for producing **Prefix** hegemony score
 ```commandline
