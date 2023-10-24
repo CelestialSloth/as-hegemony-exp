@@ -68,7 +68,7 @@ def push_data(record_type, collector, startts, endts):
 
     # Create kafka topic
     topic = BGP_DATA_TOPIC_PREFIX + "_" + collector + "_" + record_type
-    admin_client = AdminClient({'bootstrap.servers': 'localhost:8082'})
+    admin_client = AdminClient({'bootstrap.servers': 'localhost:44835'})
 
     topic_list = [NewTopic(topic, num_partitions=1, replication_factor=1, config={"retention.ms": DATA_RETENTION})]
     created_topic = admin_client.create_topics(topic_list)
@@ -81,7 +81,7 @@ def push_data(record_type, collector, startts, endts):
             logging.warning("Failed to create topic {}: {}".format(topic, e))
 
     # Create producer
-    producer = Producer({'bootstrap.servers': 'localhost:8082',
+    producer = Producer({'bootstrap.servers': 'localhost:44835',
                          # 'linger.ms': 1000,
                          'default.topic.config': {'compression.codec': 'snappy'}})
 
