@@ -143,6 +143,7 @@ def prepare_producer():
         'queue.buffering.max.kbytes': 2097151,
         'message.max.bytes': 1213486160, # added
         'replica.fetch.max.bytes': 1213486160, # added
+        'max.request.size': 1213486160, # added
         'linger.ms': 200,
         'batch.num.messages': 1000000,
         'default.topic.config': {
