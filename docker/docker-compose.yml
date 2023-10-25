@@ -13,8 +13,8 @@ services:
       - '/mnt/data-raid/pora-cache/kafka-data:/bitnami/kafka'
     environment:
       - KAFKA_BROKER_ID=1
-      - KAFKA_LISTENERS=PLAINTEXT://:45593
-      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:45593
+      - KAFKA_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
       - KAFKA_ADVERTISED_HOST_NAME=kafka
       - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes
