@@ -30,7 +30,8 @@ def create_consumer_and_set_offset(topic: str, timestamp: int, partition_id=None
                 'enable.auto.commit': False,
                 'auto.offset.reset': 'earliest',
                 'max.partition.fetch.bytes': 1213486160,
-                'receive.message.max.bytes': 1213487000
+                'receive.message.max.bytes': 1213487000,  # added
+                'fetch.message.max.bytes': 1213486160  # added
             })
 #            consumer.subscribe([topic])
 
@@ -140,6 +141,8 @@ def prepare_producer():
         'bootstrap.servers': KAFKA_BOOTSTRAP_SERVERS,
         'queue.buffering.max.messages': 10000000,
         'queue.buffering.max.kbytes': 2097151,
+        'message.max.bytes': 1213486160, # added
+        'replica.fetch.max.bytes': 1213486160, # added
         'linger.ms': 200,
         'batch.num.messages': 1000000,
         'default.topic.config': {
