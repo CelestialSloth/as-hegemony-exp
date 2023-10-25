@@ -29,7 +29,8 @@ def create_consumer_and_set_offset(topic: str, timestamp: int, partition_id=None
                 'fetch.min.bytes': 100000,
                 'enable.auto.commit': False,
                 'auto.offset.reset': 'earliest',
-                'max.partition.fetch.bytes': 1213486160
+                'max.partition.fetch.bytes': 1213486160,
+                'receive.message.max.bytes': 1213487000
             })
 #            consumer.subscribe([topic])
 
