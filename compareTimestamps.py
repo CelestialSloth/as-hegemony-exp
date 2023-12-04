@@ -18,6 +18,8 @@ def compareTimestamps(topic):
     partition = TopicPartition(topic, 0, low)
     consumer.assign([partition])
 
+    i = 0
+
     # populate the timestamps dictionary
     while True:
         msg = consumer.poll(1000)
@@ -31,13 +33,13 @@ def compareTimestamps(topic):
         }
 
         data = msgdict['value']
-        # timestamps[data.timestamp] = 1
+        timestamps[data.timestamp] = 1
 
         i += 1
         if i % 50 == 0:
             print("hello")
 
-        if i >= high or i >= 1000000:
+        if i >= high:
             break
 
     consumer.close()
