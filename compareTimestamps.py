@@ -5,10 +5,9 @@ import csv
 import os
 
 from confluent_kafka import Consumer, TopicPartition, KafkaError
-from collections import defaultdict
 
 def compareTimestamps(topic):
-    timestamps = defaultdict(lambda: 0)
+    timestamps = {}
 
     consumer = Consumer({
         'bootstrap.servers': 'localhost:9092',
@@ -29,12 +28,12 @@ def compareTimestamps(topic):
         }
 
         data = msgdict['value']
-        timestamps[data.timestamp] = 1
+        # timestamps[data.timestamp] = 1
 
         i += 1
         if i % 50 == 0:
             print("hello")
-            
+
         if i >= high or i >= 1000000:
             break
 
