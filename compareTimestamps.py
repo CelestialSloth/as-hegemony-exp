@@ -10,6 +10,12 @@ from collections import defaultdict
 def compareTimestamps(topic):
     timestamps = defaultdict(lambda: 0)
 
+    consumer = Consumer({
+        'bootstrap.servers': 'localhost:9092',
+        'group.id': 'ihr_tail',  # does this need to be named this?
+        'enable.auto.commit': False,
+    })
+
     # populate the timestamps dictionary
     while True:
         msg = consumer.poll(1000)
