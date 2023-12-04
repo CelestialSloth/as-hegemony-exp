@@ -32,7 +32,7 @@ def compareTimestamps(topic):
         timestamps[data.timestamp] += 1
 
         i += 1
-        if i >= high:
+        if i >= high or i >= 1000000:
             break
 
     consumer.close()
