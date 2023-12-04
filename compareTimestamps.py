@@ -36,8 +36,6 @@ def compareTimestamps(topic):
         timestamps[data["timestamp"]] = 1
 
         i += 1
-        if i % 50 == 0:
-            print("hello")
 
         if i >= high:
             break
