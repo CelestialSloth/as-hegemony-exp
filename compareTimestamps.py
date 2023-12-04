@@ -29,9 +29,10 @@ def compareTimestamps(topic):
         }
 
         data = msgdict['value']
-        timestamps[data.timestamp] += 1
+        timestamps[data.timestamp] = 1
 
         i += 1
+
         if i >= high or i >= 1000000:
             break
 
@@ -40,7 +41,7 @@ def compareTimestamps(topic):
     for timestamp in timestamps.keys():
         seconds = int(timestamp) / 1000
         days = seconds / (24 * 60 * 60)
-        console.log(str(days) + " days ago")
+        print(str(days) + " days ago")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
