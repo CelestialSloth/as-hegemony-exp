@@ -1,8 +1,6 @@
 import sys
 import msgpack
 import argparse
-import csv
-import os
 
 from confluent_kafka import Consumer, TopicPartition, KafkaError
 
@@ -14,6 +12,11 @@ def compareTimestamps(topic):
         'group.id': 'ihr_tail',  # does this need to be named this?
         'enable.auto.commit': False,
     })
+
+    partition = TopicPartition(topic, 0)
+    low, high = consumer.get_watermark_offsets(partition)
+    partition = TopicPartition(topic, 0, low)
+    consumer.assign([partition])
 
     # populate the timestamps dictionary
     while True:
