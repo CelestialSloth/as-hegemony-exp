@@ -44,8 +44,8 @@ def compareTimestamps(topic):
 
     consumer.close()
 
-    for timestamp in timestamps.keys():
-        seconds = int(timestamp) / 1000
+    for key in timestamps.keys():
+        seconds = int(key) / 1000
         days = seconds / (24 * 60 * 60)
         print(str(days) + " days ago")
 
