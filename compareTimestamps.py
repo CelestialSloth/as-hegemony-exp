@@ -33,7 +33,7 @@ def compareTimestamps(topic):
         }
 
         data = msgdict['value']
-        timestamps[data.timestamp] = 1
+        timestamps[data["timestamp"]] = 1
 
         i += 1
         if i % 50 == 0:
